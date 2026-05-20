@@ -84,7 +84,7 @@ function getHistoricalData(deviceId, startTime, endTime, limit = 1000) {
   }
   
   return data
-    .sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp))
+    .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
     .slice(0, limit);
 }
 

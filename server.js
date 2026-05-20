@@ -104,7 +104,7 @@ app.get('/api/temperature/history', async (req, res) => {
       time: item.timestamp,
       temperature: item.temperature,
       sensorId: item.sensor_id
-    }));
+    })).reverse();
     res.json({ success: true, data: chartData, count: chartData.length });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });

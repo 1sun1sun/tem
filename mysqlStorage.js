@@ -61,7 +61,7 @@ async function getHistoricalData(deviceId, startTime, endTime, limit = 1000) {
             sql += ' AND timestamp <= ?';
             params.push(endTime);
         }
-        sql += ' ORDER BY timestamp ASC LIMIT ' + parseInt(limit);
+        sql += ' ORDER BY timestamp DESC LIMIT ' + parseInt(limit);
         
         const [rows] = await pool.query(sql, params);
         return rows.map(row => ({
